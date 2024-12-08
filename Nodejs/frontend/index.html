@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Система управления заявками</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #applicationSection {
+      display: none; /* Форма заявки скрыта до входа */
+    }
+    #logoutButton {
+      display: none; /* Скрываем кнопку выхода до входа */
+    }
+  </style>
+</head>
+<body>
+  <h1>Система управления заявками</h1>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Имя пользователя" required>
+    <input type="password" id="password" placeholder="Пароль" required>
+    <button type="submit">Войти</button>
+    <button type="button" id="forgotPasswordButton">Забыли пароль?</button>
+  </form>
+
+  <form id="registerForm">
+    <input type="text" id="newUsername" placeholder="Новое имя пользователя" required>
+    <input type="password" id="newPassword" placeholder="Новый пароль" required>
+    <input type="email" id="newEmail" placeholder="Электронная почта" required>
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+
+  <div>
+    <button id="logoutButton">Выйти</button>
+    <button id="deleteAccountButton" style="display: none;">Удалить аккаунт</button>
+  </div>
+
+  <div id="applicationSection">
+    <h2>Список мероприятий</h2>
+    <select id="eventSelect">
+      <option value="">Выберите мероприятие</option>
+    </select>
+    <form id="applicationForm">
+      <input type="text" id="applicantName" placeholder="Ваше имя" required />
+      <button type="submit">Подать заявку</button>
+    </form>
+  </div>
+
+<div id="eventDescriptions" style="display: none; margin-top: 20px;">
+  <h3>Описание мероприятий</h3>
+  <table id="eventTable" border="1" style="width: 100%; text-align: left;">
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Дата</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Здесь будут динамически добавляться строки -->
+    </tbody>
+  </table>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+
